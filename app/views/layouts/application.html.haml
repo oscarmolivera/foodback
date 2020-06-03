@@ -5,11 +5,15 @@
     - csp_meta_tag
     
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %title= 'FoodBack'
     %meta{:charset => "utf-8"}/
     %meta{:content => "width=device-width, initial-scale=1, shrink-to-fit=no", :name => "viewport"}/
+    %meta{:content => "FoodBack", :name => "description"}/
+    %meta{:content => "Oscar M. Olivera", :name => "author"}/
+    %title FoodBack
 
     = stylesheet_link_tag    'application', media: 'all', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
-  %body
+  %body#page-top
+    = render 'shared/navbar'
     = yield
+    = render 'shared/footer'
