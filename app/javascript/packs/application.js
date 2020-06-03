@@ -8,9 +8,11 @@ require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 require("packs/landing-page")
+require("packs/custom")
 
 import 'bootstrap';
-import './stylesheets/application.scss';
+import "@fortawesome/fontawesome-free/js/all";
+
 global.$ = jQuery;
 
 
