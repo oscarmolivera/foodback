@@ -10,11 +10,13 @@ require("channels")
 require("packs/landing-page")
 require("packs/custom")
 
-import 'bootstrap';
+import "bootstrap";
 import "@fortawesome/fontawesome-free/js/all";
 
 global.$ = jQuery;
 
+const toastr = require("toastr");
+window.toastr = toastr;
 
 
 
