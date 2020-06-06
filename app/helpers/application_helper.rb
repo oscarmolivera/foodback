@@ -6,7 +6,7 @@ module ApplicationHelper
       type = 'error' if type == 'alert'
       type = 'info' if type == 'info'
       type = 'warning' if type == 'warning'
-      text = "<script>toastr.#{type}('#{message}', '#{type.upcase}');</script>"
+      text = "<script>toastr.#{type}('#{message}', '#{type.upcase}', {closeButton:true, progressBar: true});</script>"
       flash_messages << text.html_safe if message
     end
     flash_messages.join('\n').html_safe
