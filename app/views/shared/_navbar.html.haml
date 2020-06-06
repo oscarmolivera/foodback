@@ -16,6 +16,14 @@
         %li.nav-item
           %a.nav-link.js-scroll-trigger{href: :about_us} About us
         %li.nav-item
-          %a.nav-link.js-scroll-trigger{:href => "#team"} Team
-        %li.nav-item
           %a.nav-link.js-scroll-trigger{href: :contact_us} Contact
+        -if !current_user  
+          %li.nav-item.dropdown
+            %a#navbarDropdown.nav-link.dropdown-toggle.btn{href:'#', 'role'=>'button', 'data-toggle'=>'dropdown', 'aria-haspopup'=>'true', 'aria-expanded'=>'false'}
+              = 'Users'
+            .dropdown-menu{'aria-labelledby'=>'navbarDropdown'}
+              = link_to 'Log In', new_user_session_path, class: 'dropdown-item'
+              = link_to 'Sign Up', new_user_registration_path, class: 'dropdown-item'
+        -else
+          %li.nav-item
+            = link_to 'Sign Out', destroy_user_session_path, class: 'nav-link js-scroll-trigger', method: :delete
