@@ -10,7 +10,7 @@
       "request": "launch",
       "program": "${workspaceRoot}/bin/rails",
       "args": [
-        "server"
+        "server", "-b", "127.0.0.1", "-p", "4001", "-P", "tmp/server_webs.pid"
       ]
     }
   ]
