@@ -7,12 +7,13 @@
           %td{:width => "77%"}
             %div
               = form_for @restaurant do |f|
+                = render "shared/error_messages", object: f.object
                 %fieldset
                   .form-group
                     = f.label :name, class: 'col-md-3 control-label'
                     = f.text_field :name, class: 'form-control'
                   .form-group
-                    = collection_select(:restaurant, :category_id, Category.all, :id, :name,{}, {:class =>'form-control'})
+                    = collection_select(:restaurant, :category_id, Category.all, :id, :name, {:prompt => 'Please select a restaurant...'}, {:class =>'form-control'})
                   .form-group  
                     = f.label :description, class: 'col-md-3 control-label'
                     = f.text_area :description, class: 'form-control'
