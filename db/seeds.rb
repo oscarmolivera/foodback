@@ -1,11 +1,18 @@
 require 'faker'
+
+User.create!(
+  email: 'oscarmolivera@gmail.com',
+  password: '123456',
+  password_confirmation: '123456'
+)
+
 8.times do
   Category.create!(
     name: Faker::Restaurant.type
   )
 end
-
 puts '8 Categories Created!'
+
 25.times do
   Restaurant.create!(
     name: Faker::Restaurant.name,
