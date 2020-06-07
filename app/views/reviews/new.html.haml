@@ -1,0 +1,21 @@
+.container{style: 'margin-top: 85px;'}
+  .row
+    %h2 Write your Review.
+    %table{:border => "0", :width => "100%"}
+      .col-md-9.col-md-offset-0
+        %tr
+          %td{:width => "77%"}
+            %div
+              = form_for [@restaurant, @review] do |f| 
+                = render "shared/error_messages", object: f.object
+                %fieldset
+                  .form-group
+                    = f.label :comment, class: 'col-md-3 control-label'
+                    = f.text_area :comment, class: 'form-control'
+                  .form-group  
+                    = f.label :rating, class: 'col-md-3 control-label'
+                    = f.number_field :rating, class: 'form-control'
+                  .form-group    
+                    = f.submit
+  
+ 
