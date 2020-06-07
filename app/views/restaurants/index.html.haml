@@ -1,5 +1,16 @@
 .container{style: 'margin-top: 85px;'}
   .row
-    %h2 Index
-    %hr
-    =link_to 'New Restaurant', new_restaurant_path, class: 'btn btn-large'
+    %h2 Restaurants
+  .row  
+    %table
+      %thead
+        %tr
+          %th="Name"
+          %th{colspan:"3"}
+      %tbody
+        -@restaurants.each do |restaurant|
+          %tr
+            %td= restaurant.name
+            %td= link_to 'Write a Review |', restaurant
+            %td= link_to 'Edit Info', edit_restaurant_path(restaurant) 
+  =link_to 'New Restaurant', new_restaurant_path, class: 'btn btn-primary btn-xl text-uppercase js-scroll-trigger'
