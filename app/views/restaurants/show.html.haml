@@ -1,0 +1,45 @@
+.container{style: 'margin-top: 85px;'}
+  .row
+    .col-md-8
+      %h2.section-heading.text-uppercase
+        = @restaurant.name
+      %address.border-bottom
+        = @restaurant.address1
+        = '| ' + @restaurant.address2 if @restaurant.address2.present?
+        = @restaurant.city+','
+        = @restaurant.state+'.'
+        %br
+        = @restaurant.phone  
+        = "Zipcode: #{@restaurant.zipcode}"
+        %br
+        = "Email: #{@restaurant.email}"  
+        
+    %aside.col-md-4.blog-sidebar
+      .p-4.mb-3.bg-light.rounded
+        %h4.font-italic About
+        %p.mb-0
+          Etiam porta
+          %em sem malesuada magna
+          mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.
+    .row
+      %h4.font-italic Reviews
+      .col-md-12
+        .row.no-gutters.border.rounded.overflow-hidden.flex-md-row.mb-4.shadow-sm.h-md-250.position-relative
+          .col.p-4.d-flex.flex-column.position-static
+            %strong.d-inline-block.mb-2.text-primary World
+            %h3.mb-0 Featured post
+            .mb-1.text-muted Nov 12
+            %p.card-text.mb-auto This is a wider card with supporting text below as a natural lead-in to additional content.
+            %a.stretched-link{:href => "#"} Continue reading
+          .col-auto.d-none.d-lg-block
+            %svg.bd-placeholder-img{"aria-label" => "Placeholder: Thumbnail", :focusable => "false", :height => "250", :preserveaspectratio => "xMidYMid slice", :role => "img", :width => "200", :xmlns => "http://www.w3.org/2000/svg"}
+              %title Placeholder
+              %rect{:fill => "#55595c", :height => "100%", :width => "100%"}
+              %text{:dy => ".3em", :fill => "#eceeef", :x => "50%", :y => "50%"} Thumbnail
+          
+  
+  .row    
+    = link_to 'Edit', edit_restaurant_path(@restaurant)
+    | 
+    = link_to 'Back', restaurants_path    
+    
