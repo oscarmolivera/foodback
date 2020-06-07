@@ -5,6 +5,17 @@ User.create!(
   password: '123456',
   password_confirmation: '123456'
 )
+puts 'My User created!'
+
+8.times do
+  pass = Faker::Internet.password(min_length: 8)
+  User.create!(
+    email: Faker::Internet.email,
+    password: pass,
+    password_confirmation: pass
+  )
+end
+puts '8 Dummy users created!'
 
 8.times do
   Category.create!(
@@ -27,5 +38,18 @@ puts '8 Categories Created!'
     category_id: Faker::Number.between(from: 1, to: 8)
   )
 end
-
 puts '25 Restaurants Created!'
+
+25.times do
+  3.times do
+    Review.create!(
+      comment: Faker::Restaurant.review,
+      rating: Faker::Number.between(from: 0, to: 5),
+      created_at: Faker::Date.backward(days: 24),
+      updated_at: Date.today,
+      restaurant_id: Faker::Number.between(from: 1, to: 25),
+      user_id: Faker::Number.between(from: 1, to: 9)
+    )
+  end
+end
+puts '75 Reviews created! 3 for each restaurant'
