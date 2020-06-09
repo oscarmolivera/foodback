@@ -1,5 +1,5 @@
 class Restaurant < ApplicationRecord
-  has_many :reviews
+  has_many :reviews, dependent: :destroy
   belongs_to :category
 
   validates :name, :description, :address1, :city, :phone, :email, :category_id, presence: true
