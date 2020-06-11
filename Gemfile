@@ -18,6 +18,8 @@ gem 'devise', '~> 4.7', '>= 4.7.1'
 gem 'devise-bootstrap-views', '~> 1.1'
 # Slugging and permalink plugins for Active Record.
 gem 'friendly_id', '~> 5.3'
+# Object geocoding by street or IP address
+gem 'geocoder', '~> 1.6', '>= 1.6.3'
 # HTML Abstraction Markup Language.
 gem 'haml', '~> 5.1', '>= 5.1.2'
 ## High-level wrapper for processing images for the web with ImageMagick or libvips.
