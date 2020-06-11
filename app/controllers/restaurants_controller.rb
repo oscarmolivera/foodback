@@ -21,6 +21,8 @@ class RestaurantsController < ApplicationController
     @restaurant = Restaurant.find(params[:id])
     @reviews = Review.where(restaurant_id: @restaurant)
     @avg_rating = @reviews.avg_rating(@restaurant.id)
+    @half_star = @avg_rating % 1 != 0 ? 1 : 0
+    @blank_stars = @reviews.blank_stars(@restaurant.id)
   end
 
   private

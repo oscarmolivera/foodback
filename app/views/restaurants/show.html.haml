@@ -22,7 +22,15 @@
           %em= "About #{@restaurant.name}"
           %br
           %h5.text-muted
-            = @avg_rating
+          - @avg_rating.to_i.times do
+            %span
+              %i.fas.fa-star
+          - @half_star.to_i.times do
+            %span
+              %i.fas.fa-star-half-alt    
+          - @blank_stars.to_i.times do
+            %span
+              %i.far.fa-star    
         %p.mb-0
           = @restaurant.description 
     .row
@@ -43,10 +51,9 @@
                   - review.rating.to_i.times do
                     %span
                       %i.fas.fa-star
-                  - review.blank_stars(@restaurant.id).to_i.times do
-                    %span
-                      %i.far.fa-star    
-                  = pluralize(review.rating, 'Star')
+                  - (5 - review.rating).to_i.times do
+                    %span 
+                      %i.far.fa-star
                 %p.card-text.mb-auto
                   = review.comment
                 %a.stretched-link{:href => "#"} Continue reading
