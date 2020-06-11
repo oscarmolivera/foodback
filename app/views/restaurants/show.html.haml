@@ -45,7 +45,7 @@
             .row.no-gutters.border.rounded.overflow-hidden.flex-md-row.mb-4.shadow-sm.h-md-250.position-relative
               .col.p-4.d-flex.flex-column.position-static
                 %strong.d-inline-block.mb-2.text-primary 
-                = review.user_id
+                ="by #{review.user.full_name}" 
                 %h3.mb-0 Featured post
                 .mb-1.text-muted
                   - review.rating.to_i.times do
