@@ -1,6 +1,21 @@
 / Masthead
 %header.masthead
   .container
-    .masthead-subheading Welcome To Our Studio!
-    .masthead-heading.text-uppercase It's Nice To Meet You
+    .masthead-subheading Tell us about that great place!
+    .masthead-heading.text-uppercase Share your experience
     = link_to "Write a Restaurant Review", new_restaurant_path, class: 'btn btn-primary btn-xl text-uppercase js-scroll-trigger'
+    %section.search-sec
+      .container
+        = form_tag search_restaurants_path, method: :get do |f|
+          .row
+            .col-lg-12
+              .row
+                .col-lg-3.col-md-3.col-sm-12.p-0
+                  = select_tag :category, options_for_select(Category.all.map{ |c| [c.name, c.id]}), class: 'form-control'
+                .col-lg-3.col-md-3.col-sm-12.p-0
+                  = text_field_tag :search, nil, placeholder: 'Enter Restaurant Name', class: 'form-control'
+                .col-lg-3.col-md-3.col-sm-12.p-0
+                  = text_field_tag :location, nil, placeholder: 'Enter City', class: 'form-control'
+                .col-lg-3.col-md-3.col-sm-12.p-0
+                  =submit_tag 'Search', class: 'btn btn-danger wrn-btn'
+      

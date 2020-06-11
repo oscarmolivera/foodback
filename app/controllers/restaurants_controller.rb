@@ -25,6 +25,10 @@ class RestaurantsController < ApplicationController
     @blank_stars = @reviews.blank_stars(@restaurant.id)
   end
 
+  def search
+    @restaurants = Restaurant.search(params)
+  end
+
   private
 
   def restaurant_params
