@@ -2,6 +2,8 @@ require 'faker'
 
 User.create!(
   email: 'oscarmolivera@gmail.com',
+  first_name: 'Oscar',
+  last_name: 'Olivera',
   password: '123456',
   password_confirmation: '123456'
 )
@@ -11,6 +13,8 @@ puts 'My User created!'
   pass = Faker::Internet.password(min_length: 8)
   User.create!(
     email: Faker::Internet.email,
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
     password: pass,
     password_confirmation: pass
   )
