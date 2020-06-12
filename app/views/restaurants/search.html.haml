@@ -23,14 +23,16 @@
                   %i.fa.fa-phone
                 = restaurant.phone
               %p.card-text.mb-auto
-                = restaurant.description
+                = restaurant.description.truncate_words(25)
               = link_to 'More Info...', restaurant_path(restaurant), class: 'stretched-link'
             .col-auto.d-none.d-lg-block
-              %svg.bd-placeholder-img{"aria-label" => "Placeholder: Thumbnail", :focusable => "false", :height => "250", :preserveaspectratio => "xMidYMid slice", :role => "img", :width => "200", :xmlns => "http://www.w3.org/2000/svg"}
-                %title Placeholder
-                %rect{:fill => "#55595c", :height => "100%", :width => "100%"}
-                %text{:dy => ".3em", :fill => "#eceeef", :x => "50%", :y => "50%"} Thumbnail
-        
+            - if restaurant.images.attached?
+              .img-thumbnail.float-right{style: 'width: 445px; height:245px'}
+                - restaurant.images.each do |image|
+                  = image_tag image, class: 'img-fluid'
+            - else
+              .img-thumbnail.float-right{style: 'width: 445px; height:245px'}
+                %img{:alt => "Close modal", src: 'https://via.placeholder.com/445x240', class: 'img-fluid'}/        
   .row
     = link_to 'Back', restaurants_path
     |

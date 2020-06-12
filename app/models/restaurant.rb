@@ -2,6 +2,8 @@ class Restaurant < ApplicationRecord
   has_many :reviews, dependent: :destroy
   belongs_to :category
 
+  has_many_attached :images
+
   validates :name, :description, :address1, :city, :phone, :email, :category_id, presence: true
 
   geocoded_by :full_address

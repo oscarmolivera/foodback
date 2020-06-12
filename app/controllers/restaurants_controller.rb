@@ -10,6 +10,7 @@ class RestaurantsController < ApplicationController
 
   def create
     @restaurant = Restaurant.new(restaurant_params)
+    @restaurant.images.attach(params[:restaurant][:images])
     if @restaurant.save
       redirect_to @restaurant, notice: 'New Restaurant Created!'
     else
@@ -34,6 +35,7 @@ class RestaurantsController < ApplicationController
   def restaurant_params
     params.require(:restaurant).permit(:name, :description, :address1, :address2,
                                        :city, :state, :zipcode, :phone,
-                                       :email, :category_id)
+                                       :email, :category_id, :latitude, :longitude,
+                                       images: [])
   end
 end

@@ -1,6 +1,11 @@
 .container{style: 'margin-top: 85px;'}
   .row
     .col-md-8.border-bottom
+      .row
+        .col-md-12
+          .restaurant-image-banner
+            - @restaurant.images.each do |image|
+              = image_tag image
       .text-muted
         = @restaurant.category.name
       %h2.section-heading.text-uppercase
