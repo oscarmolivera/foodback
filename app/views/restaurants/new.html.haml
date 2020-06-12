@@ -8,37 +8,42 @@
             %div
               = form_for @restaurant do |f|
                 = render "shared/error_messages", object: f.object
-                %fieldset
-                  .form-group
-                    = f.label :name, class: 'col-md-3 control-label'
-                    = f.text_field :name, class: 'form-control'
-                  .form-group
-                    = collection_select(:restaurant, :category_id, Category.all, :id, :name, {:prompt => 'Please select a restaurant...'}, {:class =>'form-control'})
-                  .form-group  
-                    = f.label :description, class: 'col-md-3 control-label'
-                    = f.text_area :description, class: 'form-control'
-                  .form-group                      
-                    = f.label :address1, class: 'col-md-3 control-label'
-                    = f.text_field :address1, class: 'form-control'
-                  .form-group    
-                    = f.label :address2, class: 'col-md-3 control-label'
-                    = f.text_field :address2, class: 'form-control'
-                  .form-group    
-                    = f.label :city, class: 'col-md-3 control-label'
-                    = f.text_field :city, class: 'form-control'
-                  .form-group    
-                    = f.label :state, class: 'col-md-3 control-label'
-                    = f.text_field :state, class: 'form-control'
-                  .form-group    
-                    = f.label :zipcode, class: 'col-md-3 control-label'
-                    = f.text_field :zipcode, class: 'form-control'
-                  .form-group    
-                    = f.label :phone, class: 'col-md-3 control-label'
-                    = f.text_field :phone, class: 'form-control'
-                  .form-group    
-                    = f.label :email, class: 'col-md-3 control-label'
-                    = f.text_field :email, class: 'form-control'
-                  .form-group    
-                    = f.submit
-  
+                .row
+                  .col-sm-6
+                    .form-group
+                      = f.label :name, class: 'col-md-3 control-label'
+                      = f.text_field :name, class: 'form-control'
+                    .form-group
+                      = collection_select(:restaurant, :category_id, Category.all, :id, :name, {:prompt => 'Please select a restaurant...'}, {:class =>'form-control'})
+                    .form-group  
+                      = f.label :description, class: 'col-md-3 control-label'
+                      = f.text_area :description, class: 'form-control'
+                    .form-group                      
+                      = f.label :address1, class: 'col-md-3 control-label'
+                      = f.text_field :address1, class: 'form-control'
+                    .form-group    
+                      = f.label :address2, class: 'col-md-3 control-label'
+                      = f.text_field :address2, class: 'form-control'
+                    .form-group    
+                      = f.label :city, class: 'col-md-3 control-label'
+                      = f.text_field :city, class: 'form-control'
+                  .col-sm-6
+                    .form-group    
+                      = f.label :state, class: 'col-md-3 control-label'
+                      = f.text_field :state, class: 'form-control'
+                    .form-group    
+                      = f.label :zipcode, class: 'col-md-3 control-label'
+                      = f.text_field :zipcode, class: 'form-control'
+                    .form-group    
+                      = f.label :phone, class: 'col-md-3 control-label'
+                      = f.text_field :phone, class: 'form-control'
+                    .form-group    
+                      = f.label :email, class: 'col-md-3 control-label'
+                      = f.text_field :email, class: 'form-control'
+                    .form-group    
+                      = f.label :images, class: 'col-md-3 control-label'
+                      = f.file_field :images, class: 'form-control'  
+                .form-group 
+                  = f.submit
+
 = link_to 'Back', restaurants_path 
