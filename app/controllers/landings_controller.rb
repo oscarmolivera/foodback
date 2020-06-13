@@ -1,3 +1,5 @@
 class LandingsController < ApplicationController
-  def index; end
+  def index
+    @categories = Category.first(6)
+  end
 end
