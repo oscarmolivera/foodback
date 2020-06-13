@@ -1,0 +1,12 @@
+.container{style: 'margin-top: 85px;'}
+  .row
+    %h2 Edit Category
+    %table{:border => "0", :width => "100%"}
+      .col-md-9.col-md-offset-0
+        %tr
+          %td{:width => "77%"}
+            %div
+              = render 'form'
+              
+
+= link_to 'Back', restaurants_path 
