@@ -2,69 +2,21 @@
 %section#portfolio.page-section.bg-light
   .container
     .text-center
-      %h2.section-heading.text-uppercase Portfolio
-      %h3.section-subheading.text-muted Lorem ipsum dolor sit amet consectetur.
+      %h2.section-heading.text-uppercase Search by Category
+      %h3.section-subheading.text-muted Look up for the best restaurants in your area.
     .row
-      .col-lg-4.col-sm-6.mb-4
-        .portfolio-item
-          %a.portfolio-link{"data-toggle" => "modal", :href => "#portfolioModal1"}
-            .portfolio-hover
-              .portfolio-hover-content
-                %i.fas.fa-plus.fa-3x
-            %img.img-fluid{:alt => "", src: asset_url('portfolio/01-thumbnail.jpg')}/
-          .portfolio-caption
-            .portfolio-caption-heading Threads
-            .portfolio-caption-subheading.text-muted Illustration
-      .col-lg-4.col-sm-6.mb-4
-        .portfolio-item
-          %a.portfolio-link{"data-toggle" => "modal", :href => "#portfolioModal2"}
-            .portfolio-hover
-              .portfolio-hover-content
-                %i.fas.fa-plus.fa-3x
-            %img.img-fluid{:alt => "", src: asset_url('portfolio/02-thumbnail.jpg')}/
-          .portfolio-caption
-            .portfolio-caption-heading Explore
-            .portfolio-caption-subheading.text-muted Graphic Design
-      .col-lg-4.col-sm-6.mb-4
-        .portfolio-item
-          %a.portfolio-link{"data-toggle" => "modal", :href => "#portfolioModal3"}
-            .portfolio-hover
-              .portfolio-hover-content
-                %i.fas.fa-plus.fa-3x
-            %img.img-fluid{:alt => "", src: asset_url('portfolio/03-thumbnail.jpg')}/
-          .portfolio-caption
-            .portfolio-caption-heading Finish
-            .portfolio-caption-subheading.text-muted Identity
-      .col-lg-4.col-sm-6.mb-4.mb-lg-0
-        .portfolio-item
-          %a.portfolio-link{"data-toggle" => "modal", :href => "#portfolioModal4"}
-            .portfolio-hover
-              .portfolio-hover-content
-                %i.fas.fa-plus.fa-3x
-            %img.img-fluid{:alt => "", src: asset_url('portfolio/04-thumbnail.jpg')}/
-          .portfolio-caption
-            .portfolio-caption-heading Lines
-            .portfolio-caption-subheading.text-muted Branding
-      .col-lg-4.col-sm-6.mb-4.mb-sm-0
-        .portfolio-item
-          %a.portfolio-link{"data-toggle" => "modal", :href => "#portfolioModal5"}
-            .portfolio-hover
-              .portfolio-hover-content
-                %i.fas.fa-plus.fa-3x
-            %img.img-fluid{:alt => "", src: asset_url('portfolio/05-thumbnail.jpg')}/
-          .portfolio-caption
-            .portfolio-caption-heading Southwest
-            .portfolio-caption-subheading.text-muted Website Design
-      .col-lg-4.col-sm-6
-        .portfolio-item
-          %a.portfolio-link{"data-toggle" => "modal", :href => "#portfolioModal6"}
-            .portfolio-hover
-              .portfolio-hover-content
-                %i.fas.fa-plus.fa-3x
-            %img.img-fluid{:alt => "", src: asset_url('portfolio/06-thumbnail.jpg')}/
-          .portfolio-caption
-            .portfolio-caption-heading Window
-            .portfolio-caption-subheading.text-muted Photography
+      - @categories.each do |category|
+        .col-lg-4.col-sm-6.mb-4
+          .portfolio-item
+            %a.portfolio-link{"data-toggle" => "modal", :href => "#portfolioModal1"}
+              .portfolio-hover
+                .portfolio-hover-content
+                  %i.fas.fa-plus.fa-3x
+              %img.img-fluid
+                = image_tag category.img_photo, class: 'img-thumbnail' if category.img_photo.attached?
+            .portfolio-caption
+              .portfolio-caption-heading= category.name
+
 / Portfolio Modals
 / Modal 1
 #portfolioModal1.portfolio-modal.modal.fade{"aria-hidden" => "true", :role => "dialog", :tabindex => "-1"}
