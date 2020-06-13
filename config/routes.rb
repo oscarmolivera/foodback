@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
 
+  resources :categories
+
   resources :restaurants do
     resources :reviews, except: %i[index show]
     collection do
