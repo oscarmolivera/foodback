@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
   namespace :admin do
-      resources :users
-      resources :restaurants
-      resources :categories
-      resources :reviews
+    resources :users
+    resources :restaurants
+    resources :categories
+    resources :reviews
 
-      root to: "users#index"
-    end
+    root to: 'users#index'
+  end
     
   devise_for :users
 
