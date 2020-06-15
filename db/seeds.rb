@@ -5,7 +5,8 @@ User.create!(
   first_name: 'Oscar',
   last_name: 'Olivera',
   password: '123456',
-  password_confirmation: '123456'
+  password_confirmation: '123456',
+  admin: true
 )
 puts 'My User created!'
 
@@ -16,7 +17,8 @@ puts 'My User created!'
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
     password: pass,
-    password_confirmation: pass
+    password_confirmation: pass,
+    admin: false
   )
 end
 puts '8 Dummy users created!'
