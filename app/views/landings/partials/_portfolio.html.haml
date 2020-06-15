@@ -2,13 +2,13 @@
 %section#portfolio.page-section.bg-light
   .container
     .text-center
-      %h2.section-heading.text-uppercase Search by Category
+      %h2.section-heading.text-uppercase Search in your area
       %h3.section-subheading.text-muted Look up for the best restaurants in your area.
     .row
       - @categories.each do |category|
         .col-lg-4.col-sm-6.mb-4
           .portfolio-item
-            %a.portfolio-link{"data-toggle" => "modal", :href => "#portfolioModal1"}
+            %a.portfolio-link{"data-toggle" => "modal", :href => "#portfolioModal#{category.id}", "data-target" => ""}
               .portfolio-hover
                 .portfolio-hover-content
                   %i.fas.fa-plus.fa-3x
@@ -19,134 +19,46 @@
 
 / Portfolio Modals
 / Modal 1
-#portfolioModal1.portfolio-modal.modal.fade{"aria-hidden" => "true", :role => "dialog", :tabindex => "-1"}
-  .modal-dialog
-    .modal-content
-      .close-modal{"data-dismiss" => "modal"}
-        %img{:alt => "Close modal", src: asset_url('close-icon.svg')}/
-      .container
-        .row.justify-content-center
-          .col-lg-8
-            .modal-body
-              / Project Details Go Here
-              %h2.text-uppercase Project Name
-              %p.item-intro.text-muted Lorem ipsum dolor sit amet consectetur.
-              %img.img-fluid.d-block.mx-auto{:alt => "", src: asset_url('portfolio/01-full.jpg')}/
-              %p Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!
-              %ul.list-inline
-                %li Date: January 2020
-                %li Client: Threads
-                %li Category: Illustration
-              %button.btn.btn-primary{"data-dismiss" => "modal", :type => "button"}
-                %i.fas.fa-times.mr-1>
-                Close Project
-/ Modal 2
-#portfolioModal2.portfolio-modal.modal.fade{"aria-hidden" => "true", :role => "dialog", :tabindex => "-1"}
-  .modal-dialog
-    .modal-content
-      .close-modal{"data-dismiss" => "modal"}
-        %img{:alt => "Close modal", src: asset_url('close-icon.svg')}/
-      .container
-        .row.justify-content-center
-          .col-lg-8
-            .modal-body
-              / Project Details Go Here
-              %h2.text-uppercase Project Name
-              %p.item-intro.text-muted Lorem ipsum dolor sit amet consectetur.
-              %img.img-fluid.d-block.mx-auto{:alt => "", src: asset_url('portfolio/02-full.jpg')}/
-              %p Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!
-              %ul.list-inline
-                %li Date: January 2020
-                %li Client: Explore
-                %li Category: Graphic Design
-              %button.btn.btn-primary{"data-dismiss" => "modal", :type => "button"}
-                %i.fas.fa-times.mr-1>
-                Close Project
-/ Modal 3
-#portfolioModal3.portfolio-modal.modal.fade{"aria-hidden" => "true", :role => "dialog", :tabindex => "-1"}
-  .modal-dialog
-    .modal-content
-      .close-modal{"data-dismiss" => "modal"}
-        %img{:alt => "Close modal", src: asset_url('close-icon.svg')}/
-      .container
-        .row.justify-content-center
-          .col-lg-8
-            .modal-body
-              / Project Details Go Here
-              %h2.text-uppercase Project Name
-              %p.item-intro.text-muted Lorem ipsum dolor sit amet consectetur.
-              %img.img-fluid.d-block.mx-auto{:alt => "", src: asset_url('portfolio/03-full.jpg')}/
-              %p Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!
-              %ul.list-inline
-                %li Date: January 2020
-                %li Client: Finish
-                %li Category: Identity
-              %button.btn.btn-primary{"data-dismiss" => "modal", :type => "button"}
-                %i.fas.fa-times.mr-1>
-                Close Project
-/ Modal 4
-#portfolioModal4.portfolio-modal.modal.fade{"aria-hidden" => "true", :role => "dialog", :tabindex => "-1"}
-  .modal-dialog
-    .modal-content
-      .close-modal{"data-dismiss" => "modal"}
-        %img{:alt => "Close modal", src: asset_url('close-icon.svg')}/
-      .container
-        .row.justify-content-center
-          .col-lg-8
-            .modal-body
-              / Project Details Go Here
-              %h2.text-uppercase Project Name
-              %p.item-intro.text-muted Lorem ipsum dolor sit amet consectetur.
-              %img.img-fluid.d-block.mx-auto{:alt => "", src: asset_url('portfolio/04-full.jpg')}/
-              %p Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!
-              %ul.list-inline
-                %li Date: January 2020
-                %li Client: Lines
-                %li Category: Branding
-              %button.btn.btn-primary{"data-dismiss" => "modal", :type => "button"}
-                %i.fas.fa-times.mr-1>
-                Close Project
-/ Modal 5
-#portfolioModal5.portfolio-modal.modal.fade{"aria-hidden" => "true", :role => "dialog", :tabindex => "-1"}
-  .modal-dialog
-    .modal-content
-      .close-modal{"data-dismiss" => "modal"}
-        %img{:alt => "Close modal", src: asset_url('close-icon.svg')}/
-      .container
-        .row.justify-content-center
-          .col-lg-8
-            .modal-body
-              / Project Details Go Here
-              %h2.text-uppercase Project Name
-              %p.item-intro.text-muted Lorem ipsum dolor sit amet consectetur.
-              %img.img-fluid.d-block.mx-auto{:alt => "", src: asset_url('portfolio/05-full.jpg')}/
-              %p Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!
-              %ul.list-inline
-                %li Date: January 2020
-                %li Client: Southwest
-                %li Category: Website Design
-              %button.btn.btn-primary{"data-dismiss" => "modal", :type => "button"}
-                %i.fas.fa-times.mr-1>
-                Close Project
-/ Modal 6
-#portfolioModal6.portfolio-modal.modal.fade{"aria-hidden" => "true", :role => "dialog", :tabindex => "-1"}
-  .modal-dialog
-    .modal-content
-      .close-modal{"data-dismiss" => "modal"}
-        %img{:alt => "Close modal", src: asset_url('close-icon.svg')}/
-      .container
-        .row.justify-content-center
-          .col-lg-8
-            .modal-body
-              / Project Details Go Here
-              %h2.text-uppercase Project Name
-              %p.item-intro.text-muted Lorem ipsum dolor sit amet consectetur.
-              %img.img-fluid.d-block.mx-auto{:alt => "", src: asset_url('portfolio/06-full.jpg')}/
-              %p Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!
-              %ul.list-inline
-                %li Date: January 2020
-                %li Client: Window
-                %li Category: Photography
-              %button.btn.btn-primary{"data-dismiss" => "modal", :type => "button"}
-                %i.fas.fa-times.mr-1>
-                Close Project            
+- @categories.each do |category|
+  .portfolio-modal.modal.fade{id: "portfolioModal#{category.id}","aria-hidden" => "true", :role => "dialog", :tabindex => "-1"}
+    .modal-dialog
+      .modal-content
+        .close-modal{"data-dismiss" => "modal"}
+          %img{:alt => "Close modal", src: asset_url('close-icon.svg')}/
+        .container
+          .row.justify-content-center
+            .col-lg-8
+              .modal-body
+                / Project Details Go Here
+                %p.item-intro.text-muted= "This are the restaurants in your area"
+                %h2.text-uppercase= category.name
+                .col-md-12
+                  - if @restaurants.blank?
+                    %p
+                      = "No Results, try again..."
+                  - else    
+                    - @restaurants.each do |restaurant|
+                      .row.no-gutters.border.rounded.overflow-hidden.flex-md-row.mb-4.shadow-sm.h-md-250.position-relative
+                        .col.p-4.d-flex.flex-column.position-static
+                          %strong.d-inline-block.mb-2.text-primary 
+                          = link_to restaurant.category.name, restaurant_path(restaurant)
+                          %h3.mb-0
+                            = restaurant.name
+                          .mb-1.text-muted
+                            %span 
+                              %i.fa.fa-phone
+                            = restaurant.phone
+                          %p.card-text.mb-auto
+                            = restaurant.description.truncate_words(25)
+                          = link_to 'More Info...', restaurant_path(restaurant), class: 'stretched-link'
+                        .col-auto.d-none.d-lg-block
+                        - if restaurant.images.attached?
+                          .img-thumbnail.float-right{style: 'width: 445px; height:245px'}
+                            - restaurant.images.each do |image|
+                              = image_tag image, class: 'img-fluid'
+                        - else
+                          .img-thumbnail.float-right{style: 'width: 445px; height:245px'}
+                            %img{:alt => "Close modal", src: 'https://via.placeholder.com/445x240', class: 'img-fluid'}/  
+                            %button.btn.btn-primary{"data-dismiss" => "modal", :type => "button"}
+                              %i.fas.fa-times.mr-1>
+                              Close Project
