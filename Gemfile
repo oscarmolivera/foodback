@@ -10,6 +10,8 @@ ruby '2.6.2'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
+# A framework for creating powerful, admin dashboards in Rails
+gem 'administrate', '~> 0.13.0'
 # Reduces boot times through caching; required in config/boot.rb.
 gem 'bootsnap', '>= 1.4.2', require: false
 # Flexible authentication solution for Rails with Warden.
