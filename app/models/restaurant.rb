@@ -7,10 +7,14 @@ class Restaurant < ApplicationRecord
   validates :name, :description, :address1, :city, :phone, :email, :category_id, presence: true
 
   geocoded_by :full_address
-  after_validation :geocode
+  after_validation :geocode, if: :address_changed?
 
   def full_address
-    [address1, city, state, zipcode].join(', ')
+    [address1].compact.join(', ')
+  end
+  
+  def address_changed?
+    address1_changed? || city_changed? || zip_changed? || state_changed?
   end
 
   def self.search(params)

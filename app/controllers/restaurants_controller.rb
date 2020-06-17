@@ -1,10 +1,11 @@
 class RestaurantsController < ApplicationController
   before_action :authenticate_user!, only: %i[create new]
   def index
-    visitor_latitude = request.location.latitude
-    visitor_longitude = request.location.longitude
+    #visitor_latitude = request.location.latitude
+    #visitor_longitude = request.location.longitude
 
-    @restaurants = Restaurant.near([visitor_latitude, visitor_longitude])
+    #@restaurants = Restaurant.near([visitor_latitude, visitor_longitude])
+    @restaurants = Restaurant.all
   end
 
   def new
