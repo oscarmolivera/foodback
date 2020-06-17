@@ -34,48 +34,50 @@ class RestaurantDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
-  reviews
-  category
+    name
+    address1
+    reviews
+    category
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
-  reviews
-  category
-  id
-  name
-  description
-  address1
-  address2
-  city
-  state
-  zipcode
-  phone
-  email
-  created_at
-  updated_at
-  latitude
-  longitude
+    reviews
+    category
+    id
+    name
+    description
+    address1
+    address2
+    city
+    state
+    zipcode
+    phone
+    email
+    created_at
+    updated_at
+    latitude
+    longitude
   ].freeze
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
-  reviews
-  category
-  name
-  description
-  address1
-  address2
-  city
-  state
-  zipcode
-  phone
-  email
-  latitude
-  longitude
+    reviews
+    category
+    name
+    description
+    address1
+    address2
+    city
+    state
+    zipcode
+    phone
+    email
+    latitude
+    longitude
   ].freeze
 
   # COLLECTION_FILTERS
