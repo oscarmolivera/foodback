@@ -9,6 +9,8 @@ require("@rails/activestorage").start()
 require("channels")
 require("packs/landing-page")
 require("packs/custom")
+require("packs/maps/index")
+require("gmaps")
 
 import "bootstrap";
 import "@fortawesome/fontawesome-free/js/all";
