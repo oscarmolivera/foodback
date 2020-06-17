@@ -12,6 +12,8 @@
     %title FoodBack
 
     = stylesheet_link_tag    'application', media: 'all', media: 'all', 'data-turbolinks-track': 'reload'
+    
+    = javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{Rails.application.credentials.google_maps[:api_key]}&callback=initMap", 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
   %body#page-top
     = toastr_flash_messages
