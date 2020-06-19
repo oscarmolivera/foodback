@@ -25,7 +25,7 @@ class RestaurantDashboard < Administrate::BaseDashboard
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
     latitude: Field::Number.with_options(decimals: 2),
-    longitude: Field::Number.with_options(decimals: 2),
+    longitude: Field::Number.with_options(decimals: 2)
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -36,7 +36,6 @@ class RestaurantDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = %i[
     name
     address1
-    reviews
     category
   ].freeze
 

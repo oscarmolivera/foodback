@@ -33,7 +33,6 @@ class UserDashboard < Administrate::BaseDashboard
     first_name
     last_name
     email
-    reviews
     encrypted_password
   ].freeze
 
