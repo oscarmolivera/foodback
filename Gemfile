@@ -56,6 +56,8 @@ group :development do
   # Guard and LiveReload automatically reloads your browser when 'view' files are modified.
   gem 'guard'
   gem 'guard-livereload', '~> 2.5', require: false
+  # Guard::RSpec allows to automatically & intelligently launch specs when files are modified.
+  gem 'guard-rspec', require: false
   # Listens to file modifications and notifies you about the changes.
   gem 'listen', '>= 3.0.5', '< 3.2'
   # A simple, fast Mysql library for Ruby, binding to libmysql.
@@ -77,6 +79,8 @@ group :test do
   gem 'database_cleaner'
   # A tool for writing automated tests of websites.
   gem 'selenium-webdriver'
+  # Simple One-Liner Tests for Rails
+  gem 'shoulda-matchers', '~> 4.3'
   # A testing framework for Rails 5+.
   gem 'rspec-rails', '~> 4.0'
   # Use sqlite3 as the database for testing.
