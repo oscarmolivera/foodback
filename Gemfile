@@ -44,6 +44,8 @@ gem 'webpacker', '~> 4.0'
 gem 'will_paginate', '~> 3.3'
 
 group :development, :test do
+  # help to kill N+1 queries and unused eager loading.
+  gem 'bullet', '~> 6.1'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console.
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   # Easily generate fake data: names, addresses, phone numbers, etc.
